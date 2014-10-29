@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<% if @message.nil? then %>
+<%= link_to 'New Message', new_wagon_message_path %> |
+<% else %>
+<p>
+  <strong>Content:</strong>
+  <%= @message.content %>
+</p>
+
+<p>
+  <strong>Wagon:</strong>
+  <%= @message.wagon.name %>
+</p>
+<% end %>
+<%= link_to 'Edit', edit_wagon_message_path %> |
+<%= link_to 'Back', wagon_messages_path %>

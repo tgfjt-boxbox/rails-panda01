@@ -1,0 +1,31 @@
+<h1>Listing messages</h1>
+
+<% if @message.nil? then %>
+<%= link_to 'Back', wagon_path(@wagon) %> |
+<%= link_to 'New Message', new_wagon_message_path %>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Wagon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @message.content %></td>
+        <td><%= @message.wagon.name %></td>
+        <td><%= link_to 'Show', wagon_message_path(@wagon, @message) %></td>
+        <td><%= link_to 'Edit', edit_wagon_message_path(@wagon, @message) %></td>
+        <td><%= link_to 'Destroy', wagon_message_path(@wagon, @message), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', wagon_path(@wagon) %> |
+<%= link_to 'New Message', new_wagon_message_path %>
+<% end %>

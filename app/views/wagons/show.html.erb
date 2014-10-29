@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wagon.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @wagon.email %>
+</p>
+
+<%= link_to 'Messages', wagon_messages_path(@wagon) %> |
+<%= link_to 'Edit', edit_wagon_path(@wagon) %> |
+<%= link_to 'Back', wagons_path %>
